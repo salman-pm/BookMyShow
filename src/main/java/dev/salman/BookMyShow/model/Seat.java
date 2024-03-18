@@ -13,10 +13,22 @@ import lombok.Setter;
 @Entity(name = "BMS_SEAT")
 public class Seat extends BaseModel{
     private int seatRowNumber;
-    private int seatColNUmber;
-    private String seatNUmber;
+    private int seatColNumber;
+    private String seatNumber;
     @Enumerated(EnumType.STRING)
     private SeatType seatType;
     @Enumerated(EnumType.STRING)
     private SeatStatus seatStatus;
+
+    public Seat(){
+
+    }
+
+    public Seat(int seatRowNumber, int seatColNUmber, String seatNUmber, SeatType seatType, SeatStatus seatStatus) {
+        this.seatRowNumber = seatRowNumber;
+        this.seatColNumber = seatColNUmber;
+        this.seatNumber = seatNUmber;
+        this.seatType = seatType;
+        this.seatStatus = seatStatus;
+    }
 }
